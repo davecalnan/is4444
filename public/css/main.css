@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+}
+
+.site {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: red;
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+    padding: 2rem;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.login {
+    align-self: center;
+    justify-self: center;
+    min-width: 300px;
+}
+
+.main.card {
+    padding: 0;
+}
