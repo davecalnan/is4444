@@ -8,11 +8,11 @@
                         <li><a href="/users">Users</a></li>
                         <?php
                             global $user;
-                            if ($_SESSION['logged_in'] == false) {
+                            if ($_SESSION['logged_in']) {
+                                echo '<li><a href="/logout">Logout</a></li>';
+                            } else {
                                 echo '<li><a href="/login">Login</a></li>';
                                 echo '<li><a href="/signup">Signup</a></li>';
-                            } else {
-                                echo '<li><a href="/logout">Logout</a></li>';
                             }
                         ?>
                     </ul>
