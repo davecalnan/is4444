@@ -9,7 +9,8 @@
             </div>
         </div>
     </section>
-    <section class="section posts">
+
+    <section class="container section posts">
         <h1 class="title">
             <a href="/posts">Recent Posts</a>
         </h1>
@@ -47,7 +48,7 @@
 
     <hr>
 
-    <section class="section has-text-centered">
+    <section class="container section has-text-centered">
         <h1 class="title is-4">Get Involved</h1>
                 <?php if (userIsLoggedIn()) { ?>
                 <a href="/posts/create" class="button is-primary">Make a post!</a>
@@ -59,4 +60,5 @@
                 <?php } ?>
             </p>
     </section>
+    
 </main>

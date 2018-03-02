@@ -1,5 +1,5 @@
 <main class="main">
-    <section class="section posts">
+    <section class="container section posts">
         <h1 class="title">Recent Posts</h1>
         <?php foreach(getRecent('posts') as $post) { ?>
         <article class="card">

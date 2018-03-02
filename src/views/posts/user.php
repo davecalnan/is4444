@@ -1,5 +1,5 @@
 <main class="main">
-    <section class="section posts">
+    <section class="container section posts">
         <h1 class="title">Your Posts</h1>
         <?php
         if ($posts = getRecentWhere('posts', 'author_id', user('id'))) { 

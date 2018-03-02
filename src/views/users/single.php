@@ -1,5 +1,5 @@
 <main class="main">
-    <section class="section post">
+    <section class="container section post">
         <?php if ($user = get('users', $id)) { ?>
         <h1 class="title">
             <?= $user['name'] ?>
@@ -28,7 +28,7 @@
         </h2>
     </section>
 
-    <section class="section posts">
+    <section class="container section posts">
         <h1 class="title">Recent Posts</h1>
         <?php
         if ($posts = getManyWhere('posts', 'author_id', $user['id'])) {

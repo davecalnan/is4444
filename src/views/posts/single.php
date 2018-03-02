@@ -1,5 +1,5 @@
 <main class="main">
-    <section class="section post">
+    <section class="container section post">
         <?php if (get('posts', $id - 1) || get('posts', $id + 1)) {
         echo "<nav class=\"links\">";
             if (get('posts', $previous = $id - 1)) {
@@ -30,34 +30,36 @@
     </section>
 
     <section class="section has-background-light">
-        <h1 class="title is-4">Comments</h1>
-        <?php
-        if ($comments = getManyWhere('comments', 'post_id', $id)) {
-            foreach ($comments as $comment) {
-                ?>
-        <div class="card">
-            <header class="card-header">
-                <h1 class="card-header-title">
-                    <?= $comment['name'] ?>
-                    <span class="email"><?= $comment['email'] ?></span>
-                    <span class="on">on</span>
-                    <?= $comment['created_at'] ?>
-                </h1>
-            </header>
-            <main class="card-content">
-                <?= $comment['body'] ?>
-            </main>
-        </div>
-        <?php
+        <div class="section container">
+            <h1 class="title is-4">Comments</h1>
+            <?php
+            if ($comments = getManyWhere('comments', 'post_id', $id)) {
+                foreach ($comments as $comment) {
+                    ?>
+            <div class="card">
+                <header class="card-header">
+                    <h1 class="card-header-title">
+                        <?= $comment['name'] ?>
+                        <span class="email"><?= $comment['email'] ?></span>
+                        <span class="on">on</span>
+                        <?= $comment['created_at'] ?>
+                    </h1>
+                </header>
+                <main class="card-content">
+                    <?= $comment['body'] ?>
+                </main>
+            </div>
+            <?php
+                }
+            } else {
+                echo '<p>No comments yet. Be the first to leave one!</p><hr>';
             }
-        } else {
-            echo '<p>No comments yet. Be the first to leave one!</p><hr>';
-        }
-        ?>
+            ?>
+        </div>
     </section>
     
 
-    <section class="section leave-a-comment">
+    <section class="container section leave-a-comment">
         <h2 class="subtitle is-5">Leave a Comment</h2>
         <div class="card">
             <main class="card-content">

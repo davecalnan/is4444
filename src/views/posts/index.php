@@ -1,5 +1,5 @@
 <main class="main">
-    <section class="section posts">
+    <section class="container section posts">
         <h1 class="title">All Posts</h1>
         <?php foreach(getMany('posts') as $post) { ?>
         <article class="card">

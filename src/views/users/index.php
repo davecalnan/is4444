@@ -1,5 +1,5 @@
 <main class="main">
-    <section class="section content">
+    <section class="container section content">
         <h1>Users</h1>
         <hr>
         <table class="table is-striped">
