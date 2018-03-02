@@ -52,7 +52,7 @@ body {
 }
 
 .homepage > .hero {
-    background: url('https://images.unsplash.com/photo-1495427773570-1b700e48c039?ixlib=rb-0.3.5&s=0dd8f3e714cf4a31cc86448085b91f4b&auto=format&fit=crop&w=1950&q=80');
+    background: url('/img/cinema.jpg');
     background-blend-mode: multiply;
     background-color: rgba(0, 0, 0, 0.5);
     background-position: center;
@@ -146,4 +146,8 @@ body {
         max-width: 1200px;
         width: 1200px;
     }
+}
+
+.has-margin\:top {
+    margin-top: 1.5em;
 }

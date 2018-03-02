@@ -12,7 +12,7 @@
 
     <section class="container section posts">
         <h1 class="title">
-            <a href="/posts">Recent Posts</a>
+            <a href="/posts/recent">Recent Posts</a>
         </h1>
         <?php foreach(getRecent('posts', 2) as $post) { ?>
         <article class="card">
@@ -44,6 +44,9 @@
             </main>
         </article>
         <?php } ?>
+        <p class="has-margin:top has-text-centered">
+            <a href="/posts" class="button is-primary is-outlined">View all posts</a>
+        </p>
     </section>
 
     <hr>
