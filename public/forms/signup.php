@@ -1,13 +1,14 @@
 <?php
 
-require '../../src/session.php';
+require '../../src/helpers.php';
+
 require '../../src/database/connection.php';
 
-$name = htmlspecialchars($_POST['name']);
-$email = htmlspecialchars($_POST['email']);
-$password = htmlspecialchars($_POST['password']);
+$name = htmlspecialchars($_POST['name'], ENT_QUOTES);
+$email = htmlspecialchars($_POST['email'], ENT_QUOTES);
+$password = htmlspecialchars($_POST['password'], ENT_QUOTES);
 
 if (createUser($name, $email, $password)) {
-    return header('Location: /login');
+    return redirect('/login');
 }
-return header('Location: /signup');
+return redirect('/signup');

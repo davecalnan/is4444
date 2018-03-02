@@ -1,7 +1,7 @@
-<main class="main login card content">
+<main class="main centered card">
     <div class="card-content">
-        <h1>Login</h1>
-        <form action="/forms/login.php" method="post">
+        <h1 class="title">Login</h1>
+        <form action="/forms/login.php" method="POST">
             <div class="field">
                 <label class="label">Email</label>
                 <div class="control">

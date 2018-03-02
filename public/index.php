@@ -1,7 +1,5 @@
 <?php
 
-require '../src/session.php';
-
 require '../src/models/user.php';
 $user = new User;
 

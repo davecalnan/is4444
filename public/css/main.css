@@ -13,25 +13,116 @@ body {
 }
 
 .navbar {
-    background-color: red;
     grid-area: header;
 }
 
 .main {
     grid-area: main;
-    padding: 2rem;
 }
 
 .footer {
     grid-area: footer;
 }
 
-.login {
+.main.centered {
     align-self: center;
     justify-self: center;
     min-width: 300px;
 }
 
+.error {
+    text-align: center;
+}
+
+.error-code {
+    color: lightgrey;
+    font-size: 8em;
+}
+
+.error-message {
+    margin-bottom: 1em;
+}
+
 .main.card {
     padding: 0;
+}
+
+.card + .card {
+    margin-top: 1rem;
+}
+
+.homepage > .hero {
+    background: url('https://images.unsplash.com/photo-1495427773570-1b700e48c039?ixlib=rb-0.3.5&s=0dd8f3e714cf4a31cc86448085b91f4b&auto=format&fit=crop&w=1950&q=80');
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-position: center;
+    background-size: cover;
+}
+
+.create-post {
+    align-self: center;
+    justify-self: center;
+    min-width: 60%;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0;
+}
+
+.links > .previous {
+    align-self: flex-start;
+}
+
+.links > .next {
+    flex-basis: 100%;
+    text-align: right;
+}
+
+.at, .by, .on {
+    font-weight: normal;
+    margin: auto 0.25em auto auto;
+}
+
+.has-background-light {
+    background: whitesmoke;
+}
+
+.email {
+    font-weight: normal;
+    margin: 0 auto 0 0.5em;
+}
+
+.email::before {
+    content: '(';
+}
+
+.email::after {
+    content: ')';
+}
+
+.leave-a-comment {
+    margin-top: 2rem;
+}
+
+.float\:right {
+    float: right;
+}
+
+.section {
+    padding: 2rem;
+}
+
+.notification:last-child {
+    border-radius: 0;
+}
+
+.notification > .dismiss {
+    cursor: pointer;
+    float: right;
+}
+
+.notification[hidden] {
+    display: none;
 }

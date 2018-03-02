@@ -1,9 +1,10 @@
 <?php
 
-$views = ['homepage', 'about', 'login', 'users', 'signup', '404'];
+function view($name, $data = []) {
+    extract($data);
 
-function view($name) {
-    if (viewExists($name)) {
+    $name = str_replace('.', '/', $name);
+    if (file_exists("../src/views/$name.php")) {
         require 'views/header.php';
         require "views/$name.php";
         require 'views/footer.php';
@@ -13,12 +14,11 @@ function view($name) {
     echo '404: view not found.';
 }
 
-function viewExists($name) {
-    global $views;
+function isActive($linkPath)
+{
+    global $path;
 
-    if (in_array($name, $views)) {
-        return true;
+    if ($path === $linkPath) {
+        echo 'is-active';
     }
-
-    return false;
 }

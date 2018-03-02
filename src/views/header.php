@@ -8,44 +8,61 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="css/bulma.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/bulma.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
 </head>
 
 <body class="site">
-    <nav class="navbar is-primary">
-        <div class="container">
-            <div class="navbar-brand">
-                <a href="/" class="navbar-item">
-                    Dave's Cool Logo
-                </a>
-                <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </span>
-            </div>
-            <div id="navbarMenuHeroA" class="navbar-menu">
-                <div class="navbar-end">
-                    <a class="navbar-item is-active">
-                    Home
+    <header>
+        <nav class="navbar is-primary">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="/" class="navbar-item">
+                        <strong>For 'Em</strong>
                     </a>
-                    <a class="navbar-item">
-                    Examples
-                    </a>
-                    <a class="navbar-item">
-                    Documentation
-                    </a>
-                    <span class="navbar-item">
-                    <a class="button is-primary is-inverted">
-                        <span class="icon">
-                        <i class="fab fa-github"></i>
-                        </span>
-                        <span>Download</span>
-                    </a>
+                    <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </span>
                 </div>
+                <div class="navbar-menu">
+                    <div class="navbar-start">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="/posts" class="navbar-link">
+                                Posts
+                            </a>
+                            <div class="navbar-dropdown">
+                                <a href="/posts/recent" class="navbar-item">Recent Posts</a>
+                                <?php if (userIsLoggedIn()) { ?>
+                                <a href="/posts/mine" class="navbar-item">Your Posts</a>
+                                <?php } ?>
+                            </div>
+                        </div>
+                        <a href="/posts/create"  class="navbar-item <?php isActive('/posts/create') ?>">Make a post</a>
+                    </div>
+                    <div class="navbar-end">
+                        <?php
+                            if (userIsLoggedIn()) {
+                                echo '<a href="/users" class="navbar-item">Users</a>';
+                                echo '<span class="navbar-item"><a href="/logout" class="button is-primary is-inverted">Logout</a></span>';
+                            } else {
+                                echo '<a href="/login" class="navbar-item">Login</a>';
+                                echo '<span class="navbar-item"><a href="/signup" class="button is-primary is-inverted">Signup</a></span>';
+                            }
+                        ?>
+                    </div>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+        <?php if (isset($message)) { ?>
+        <div class="notification level is-info"><?= $message ?><a class="dismiss"><i class="fa fa-times"></i></a></div>
+        <?php } ?>
+        <?php if (isset($success)) { ?>
+        <div class="notification is-success"><?= $success ?><a class="dismiss"><i class="fa fa-times"></i></a></div>
+        <?php } ?>
+        <?php if (isset($error)) { ?>
+        <div class="notification is-danger"><?= $error ?><a class="dismiss"><i class="fa fa-times"></i></a></div>
+        <?php } ?>
+    </header>
