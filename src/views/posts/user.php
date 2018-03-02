@@ -19,7 +19,7 @@
                 </h1>
             </header>
             <main class="card-content">
-                <p><?= substr($post['body'], 0, 100) . '...' ?></p>
+                <p><?= substr($post['body'], 0, 250) . '...' ?></p>
                 <p class="help has-text-right">
                     <?php
                     echo $count = count(getManyWhere('comments', 'post_id', $post['id']));
