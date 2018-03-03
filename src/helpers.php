@@ -24,17 +24,18 @@ function user($key = null) {
 
 function validateLogin($email, $password) {
     global $mysqli;
-    if (get('users', $email, 'email') && get('users', $password, 'password')) {
+    if ($user = get('users', $email, 'email') && get('users', $password, 'password')) {
         return true;
     }
     return false;
 }
 
 function login($id) {
-    setcookie('logged_in', 'true', time() + 86400, '/');
+    if ($user = get('users', $id)) {
+        setcookie('logged_in', 'true', time() + 86400, '/');
+        setcookie('user_id', $user['id'], time() + 86400, '/');
 
-    $user = get('users', $id);
-    setcookie('user_id', $user['id'], time() + 86400, '/');
-
-    return $user;
+        return $user;
+    }
+   return false;
 }
