@@ -61,5 +61,5 @@ switch ($path) {
 }
 
 function unauthorised($error = 'Sorry, you must be logged in to view that page.') {
-    return view('errors.403', ['error' => $error]);
+    return view('login', ['error' => $error]);
 }

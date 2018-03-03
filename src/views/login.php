@@ -19,6 +19,7 @@
                     <button class="button is-primary" type="submit">Submit</button>
                 </div>
             </div>
+            <p class="help">Don't have an account? <a href="/signup">Signup</a>.</p>
         </form>
     </div>
 </main>
