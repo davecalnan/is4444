@@ -1,7 +1,5 @@
 <?php
 
-require 'helpers.php';
-
 $request_uri = explode('?', $_SERVER['REQUEST_URI'], 2);
 
 $path = $request_uri[0];
