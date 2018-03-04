@@ -1,7 +1,6 @@
 <?php
 
-function get($table, $value, $key = 'id')
-{
+function get($table, $value, $key = 'id') {
     global $mysqli;
 
     if ($result = $mysqli->query("SELECT * FROM $table WHERE $key = '$value'")) {
@@ -10,8 +9,7 @@ function get($table, $value, $key = 'id')
     return false;
 }
 
-function getMany($table, $limit = 1000)
-{
+function getMany($table, $limit = 1000) {
     global $mysqli;
     $results = [];
 
@@ -24,8 +22,7 @@ function getMany($table, $limit = 1000)
     return [];
 }
 
-function getManyWhere($table, $key, $value, $limit = 1000)
-{
+function getManyWhere($table, $key, $value, $limit = 1000) {
     global $mysqli;
     $results = [];
 
@@ -38,8 +35,7 @@ function getManyWhere($table, $key, $value, $limit = 1000)
     return [];
 }
 
-function getRecent($table, $limit = 1000)
-{
+function getRecent($table, $limit = 1000) {
     global $mysqli;
     $results = [];
 
@@ -52,8 +48,7 @@ function getRecent($table, $limit = 1000)
     return [];
 }
 
-function getRecentWhere($table, $key, $value, $limit = 1000)
-{
+function getRecentWhere($table, $key, $value, $limit = 1000) {
     global $mysqli;
     $results = [];
 
