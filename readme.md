@@ -95,7 +95,9 @@ The [src/router.php](https://github.com/davecalnan/is4444/blob/master/src/router
 
 Most routes respond with a view as handled by the [src/views.php](https://github.com/davecalnan/is4444/blob/master/src/views.php) file. If a file exists with the name of the requested view, the file will be required. If not, a '404 view not found' message will be shown.
 
-Submitted forms for either creating posts / comments / users or logging in are accessed directly and sit in the [public/forms](https://github.com/davecalnan/is4444/blob/master/public/forms) directory.
+Views can access database records via the [src/database/getters.php](https://github.com/davecalnan/is4444/blob/master/src/database/getters.php) functions to get the data they need to display.
+
+Submitted forms for either creating posts / comments / users or logging in are accessed directly and sit in the [public/forms](https://github.com/davecalnan/is4444/blob/master/public/forms) directory. These make use of the [src/database/setters.php](https://github.com/davecalnan/is4444/blob/master/src/database.setters.php) functions.
 
 Posts can be created by authenticated users and are associated with the user who creates them via foreign key.
 
