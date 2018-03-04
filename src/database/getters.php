@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Gets a single resource from the database, given a table and value with the default column matched being id.
+ *
+ * @param string $table
+ * @param mixed $value
+ * @param string $key, default = 'id'
+ * @return mixed
+ */
 function get($table, $value, $key = 'id') {
     global $mysqli;
 
@@ -9,6 +17,13 @@ function get($table, $value, $key = 'id') {
     return false;
 }
 
+/**
+ * Returns an array of resources from the database.
+ *
+ * @param string $table
+ * @param integer $limit, default = 1000
+ * @return array $results
+ */
 function getMany($table, $limit = 1000) {
     global $mysqli;
     $results = [];
@@ -22,6 +37,15 @@ function getMany($table, $limit = 1000) {
     return [];
 }
 
+/**
+ * Gets many resources from the database matching WHERE criteria.
+ *
+ * @param string $table
+ * @param string $key
+ * @param mixed $value
+ * @param integer $limit, default = 1000
+ * @return array $results
+ */
 function getManyWhere($table, $key, $value, $limit = 1000) {
     global $mysqli;
     $results = [];
@@ -35,6 +59,13 @@ function getManyWhere($table, $key, $value, $limit = 1000) {
     return [];
 }
 
+/**
+ * Get many resources from the database ordered by most recent.
+ *
+ * @param string $table
+ * @param integer $limit, default = 1000
+ * @return array $results
+ */
 function getRecent($table, $limit = 1000) {
     global $mysqli;
     $results = [];
@@ -48,6 +79,15 @@ function getRecent($table, $limit = 1000) {
     return [];
 }
 
+/**
+ * Get many resources from the database ordered by most recent matchign WHERE criteria.
+ *
+ * @param string $table
+ * @param string $key
+ * @param mixed $value
+ * @param integer $limit, default = 1000
+ * @return array $results
+ */
 function getRecentWhere($table, $key, $value, $limit = 1000) {
     global $mysqli;
     $results = [];

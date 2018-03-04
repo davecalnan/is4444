@@ -12,12 +12,12 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($users = getMany('users') as $user) { ?>
+                <?php foreach($users = getMany('users') as $user) { ?> <!-- Get all users and loop through them. -->
                 <tr>
                     <td><a href="/users/<?= $user['id'] ?>"><?= $user['name'] ?></a></td>
                     <td><a href="mailto:<?= $user['email'] ?>"><?= $user['email'] ?></a></td>
-                    <td><?= count(getManyWhere('posts', 'author_id', $user['id'])) ?></td>
-                    <td><?= count(getManyWhere('comments', 'user_id', $user['id'])) ?></td>
+                    <td><?= count(getManyWhere('posts', 'author_id', $user['id'])) ?></td> <!-- Show the number of posts associated with the given user. -->
+                    <td><?= count(getManyWhere('comments', 'user_id', $user['id'])) ?></td> <!-- Show the number of comments associated with the given user. -->
                 </tr>
                 <?php } ?>
             </tbody>

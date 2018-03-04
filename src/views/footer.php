@@ -6,7 +6,7 @@
                     <ul>
                         <li><a href="/">Home</a></li>
                         <?php
-                            if (userIsLoggedIn()) {
+                            if (userIsLoggedIn()) { // Show different links based on whether the user is logged in or not.
                                 echo '<li><a href="/users">Users</a></li>';
                                 echo '<li><a href="/logout">Logout</a></li>';
                             } else {
@@ -24,6 +24,6 @@
         </div>
     </footer>
     
-    <script src="/js/main.js"></script>
-</body>
-</html>
+    <script src="/js/main.js"></script> <!-- The main javascript file for the site. -->
+</body> <!-- The closing body tag which was opened in the src/views/header.php file. -->
+</html> <!-- The closing html tag which was opened in the src/views/header.php file. -->

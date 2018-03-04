@@ -1,7 +1,7 @@
 <main class="main create-post card content">
     <div class="card-content">
         <h1>Make a new post</h1>
-        <form action="/forms/post.php" method="POST">
+        <form action="/forms/post.php" method="POST"> <!-- Standard form, POSTing to a php file. -->
             <div class="field">
                 <label class="label">Title</label>
                 <div class="control">

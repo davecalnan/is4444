@@ -1,7 +1,7 @@
 <main class="main centered card">
     <div class="card-content">
         <h1 class="title">Sign up</h1>
-        <form action="/forms/signup.php" method="POST">
+        <form action="/forms/signup.php" method="POST"> <!-- Standard form POSTing to a php file. -->
             <div class="field">
                 <label class="label">Name</label>
                 <div class="control">

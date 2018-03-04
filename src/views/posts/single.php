@@ -1,20 +1,20 @@
 <main class="main">
     <section class="container section post">
-        <?php if (get('posts', $id - 1) || get('posts', $id + 1)) {
+        <?php if (get('posts', $id - 1) || get('posts', $id + 1)) { // If there are posts consecutively before or after this post.
         echo "<nav class=\"links\">";
             if (get('posts', $previous = $id - 1)) {
-                echo "<a href=\"/posts/$previous\" class=\"previous\">Previous</a>";
+                echo "<a href=\"/posts/$previous\" class=\"previous\">Previous</a>"; // Link to the previous post.
             }
             if (get('posts', $next = $id + 1)) {
-                echo "<a href=\"/posts/$next\" class=\"next\">Next</a>";
+                echo "<a href=\"/posts/$next\" class=\"next\">Next</a>"; // Link to the next post.
             }
         echo "</nav>";
         }
 
-        if ($post = get('posts', $id)) { ?>
+        if ($post = get('posts', $id)) { ?> <!-- Gets the post or says that it wasn't found. -->
         <h1 class="title">
             <?= $post['title'] ?>
-            <?php $user = get('users', $post['author_id']); ?>
+            <?php $user = get('users', $post['author_id']); ?> <!-- Gets the author of the post. -->
         </h1>
         <h2 class="subtitle">
             by
@@ -29,12 +29,12 @@
         </article>
     </section>
 
-    <section class="section has-background-light">
+    <section class="has-background-light">
         <div class="section container">
             <h1 class="title is-4">Comments</h1>
             <?php
-            if ($comments = getManyWhere('comments', 'post_id', $id)) {
-                foreach ($comments as $comment) {
+            if ($comments = getManyWhere('comments', 'post_id', $id)) { // Gets the comments associated with the post or says no comments were found.
+                foreach ($comments as $comment) { // Loops through each comment.
                     ?>
             <div class="card">
                 <header class="card-header">
@@ -63,16 +63,16 @@
         <h2 class="subtitle is-5">Leave a Comment</h2>
         <div class="card">
             <main class="card-content">
-                <form action="/forms/comment.php" method="POST">
+                <form action="/forms/comment.php" method="POST"> <!-- Basic form POSTing to a php file. -->
                     <input type="hidden" name="post_id" value="<?= $id ?>">
                     <?php
-                    if (userIsLoggedIn()) {
+                    if (userIsLoggedIn()) { // If the user is logged in, autofill the user's details.
                         $user = user();
                     ?>
                     <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
                     <input type="hidden" name="name" value="<?= $user['name'] ?>">
                     <input type="hidden" name="email" value="<?= $user['email'] ?>">
-                    <?php } else { ?>
+                    <?php } else { ?> <!-- If there is no logged in user, show fields for them to provide their name and email. -->
                     <div class="columns">
                         <div class="column">
                             <div class="field">
@@ -111,5 +111,5 @@
         </div>
     </section>
 
-    <?php } else { echo 'Post not found.'; } ?>
+    <?php } else { echo 'Post not found.'; } ?> <!-- If no post exists with the given id, say it wasn't found. -->
 </main>

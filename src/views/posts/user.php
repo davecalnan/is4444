@@ -2,8 +2,8 @@
     <section class="container section posts">
         <h1 class="title">Your Posts</h1>
         <?php
-        if ($posts = getRecentWhere('posts', 'author_id', user('id'))) { 
-            foreach ($posts as $post) {
+        if ($posts = getRecentWhere('posts', 'author_id', user('id'))) { // Get all posts associated with the authenticated user.
+            foreach ($posts as $post) { // If posts were found, loop through the posts.
         ?>
         <article class="card">
             <header class="card-header">
@@ -19,10 +19,10 @@
                 </h1>
             </header>
             <main class="card-content">
-                <p><?= substr($post['body'], 0, 250) . '...' ?></p>
+                <p><?= substr($post['body'], 0, 250) . '...' ?></p> <!-- Truncate posts at 250 characters. -->
                 <p class="help has-text-right">
                     <?php
-                    echo $count = count(getManyWhere('comments', 'post_id', $post['id']));
+                    echo $count = count(getManyWhere('comments', 'post_id', $post['id'])); // Show the number of comments associated with the post.
                 if ($count === 1) {
                     echo ' Comment';
                 } else {
@@ -33,7 +33,7 @@
         </article>
         <?php
             }
-        } else { ?>
+        } else { ?> <!-- If there are no posts associated with the authenticated user, prompt them to create one. -->
             <h2 class="subtitle">
                 No posts found. Why don't you <a href="/posts/create">make your first one</a>?
             </h2>
