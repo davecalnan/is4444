@@ -34,7 +34,6 @@ Anyone can leave a comment. However, if there is a logged in user, their name an
 ```
 root
 │   README.md
-│   file001.txt    
 │
 └───public - All files which are to be accessible by users.
 │   │   index.php - Main entrypoint for the site.
