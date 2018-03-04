@@ -9,7 +9,7 @@
                 <a href="/posts/mine" class="button is-white is-outlined">Your Posts</a>
                 <?php } else { ?>
                 <a href="/signup" class="button is-white is-outlined">Signup</a>
-                <?php ) ?>
+                <?php } ?>
             </div>
         </div>
     </section>
