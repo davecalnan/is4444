@@ -76,7 +76,7 @@
                     <div class="columns">
                         <div class="column">
                             <div class="field">
-                                <label class="label">Your Name</label>
+                                <label class="label" for="name">Your Name</label>
                                 <div class="control">
                                     <input class="input" type="text" name="name" placeholder="Angry Commenter" required>
                                     <p class="help">
@@ -87,7 +87,7 @@
                         </div>
                         <div class="column">
                             <div class="field">
-                                <label class="label">Your Email</label>
+                                <label class="label" for="email">Your Email</label>
                                 <div class="control">
                                     <input class="input" type="email" name="email" placeholder="ishallnotbesilenced@gmail.com" required>
                                 </div>
@@ -96,7 +96,7 @@
                     </div>
                     <?php } ?>
                     <div class="field">
-                        <label class="label">Comment</label>
+                        <label class="label" for="body">Comment</label>
                         <div class="control">
                             <textarea class="textarea" name="body" placeholder="Have your say." rows="3" required></textarea>
                         </div>

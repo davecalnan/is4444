@@ -3,13 +3,13 @@
         <h1>Make a new post</h1>
         <form action="/forms/post.php" method="POST"> <!-- Standard form, POSTing to a php file. -->
             <div class="field">
-                <label class="label">Title</label>
+                <label class="label" for="title">Title</label>
                 <div class="control">
                     <input class="input" type="text" name="title" placeholder="It was the best of times." required autofocus>
                 </div>
             </div>
             <div class="field">
-                <label class="label">Body</label>
+                <label class="label" for="body">Body</label>
                 <div class="control">
                     <textarea class="textarea" name="body" placeholder="It was the worst of times." rows="5" required></textarea>
                 </div>

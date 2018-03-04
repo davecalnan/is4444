@@ -3,19 +3,19 @@
         <h1 class="title">Sign up</h1>
         <form action="/forms/signup.php" method="POST"> <!-- Standard form POSTing to a php file. -->
             <div class="field">
-                <label class="label">Name</label>
+                <label class="label" for="name">Name</label>
                 <div class="control">
                     <input class="input" type="text" name="name" placeholder="Not Batman" required autofocus>
                 </div>
             </div>
             <div class="field">
-                <label class="label">Email</label>
+                <label class="label" for="email">Email</label>
                 <div class="control">
                     <input class="input" type="email" name="email" placeholder="bruce@wayneenterprises.com" required>
                 </div>
             </div>
             <div class="field">
-                <label class="label">Password</label>
+                <label class="label" for="password">Password</label>
                 <div class="control">
                     <input class="input" type="password" name="password" placeholder="********" required>
                 </div>

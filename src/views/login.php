@@ -3,13 +3,13 @@
         <h1 class="title">Login</h1>
         <form action="/forms/login.php" method="POST"> <!-- Standard form POSTing to a php file. -->
             <div class="field">
-                <label class="label">Email</label>
+                <label class="label" for="email">Email</label>
                 <div class="control">
                     <input class="input" type="email" name="email" placeholder="bruce@wayneenterprises.com" required autofocus>
                 </div>
             </div>
             <div class="field">
-                <label class="label">Password</label>
+                <label class="label" for="password">Password</label>
                 <div class="control">
                     <input class="input" type="password" name="password" placeholder="********" required>
                 </div>
