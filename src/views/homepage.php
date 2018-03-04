@@ -5,7 +5,11 @@
                 <h1 class="title">Welcome to For 'Em</h1>
                 <h2 class="subtitle">A forum about nothing in particular, really.</h2>
                 <a href="/posts" class="button is-info">View Posts</a>
+                <?php if (userIsLoggedIn()) { ?>
+                <a href="/posts/mine" class="button is-white is-outlined">Your Posts</a>
+                <?php } else { ?>
                 <a href="/signup" class="button is-white is-outlined">Signup</a>
+                <?php ) ?>
             </div>
         </div>
     </section>
