@@ -1,17 +1,20 @@
 <main class="main">
     <section class="container section post">
-        <?php if (get('posts', $id - 1) || get('posts', $id + 1)) { // If there are posts consecutively before or after this post.
-        echo "<nav class=\"links\">";
+        <?php if (get('posts', $id - 1) || get('posts', $id + 1)) { ?> <!-- If there are posts consecutively before or after this post. -->
+        <nav class=\"links\">
+            <?php
             if (get('posts', $previous = $id - 1)) {
                 echo "<a href=\"/posts/$previous\" class=\"previous\">Previous</a>"; // Link to the previous post.
             }
             if (get('posts', $next = $id + 1)) {
                 echo "<a href=\"/posts/$next\" class=\"next\">Next</a>"; // Link to the next post.
             }
-        echo "</nav>";
+            ?>
+        </nav>
+        <?php
         }
-
-        if ($post = get('posts', $id)) { ?> <!-- Gets the post or says that it wasn't found. -->
+        if ($post = get('posts', $id)) { // Gets the post or says that it wasn't found.
+        ?> 
         <h1 class="title">
             <?= $post['title'] ?>
             <?php $user = get('users', $post['author_id']); ?> <!-- Gets the author of the post. -->
@@ -25,7 +28,7 @@
         </h2>
 
         <article class="box">
-            <p><?php echo $post['body']; ?></p>
+            <p><?= $post['body'] ?></p>
         </article>
     </section>
 
@@ -64,7 +67,7 @@
         <div class="card">
             <main class="card-content">
                 <form action="/forms/comment.php" method="POST"> <!-- Basic form POSTing to a php file. -->
-                    <input type="hidden" name="post_id" value="<?= $id ?>">
+                    <input type="hidden" name="post_id" value="<?= $id ?>"> <!-- The ID of the post to associate the comment with. -->
                     <?php
                     if (userIsLoggedIn()) { // If the user is logged in, autofill the user's details.
                         $user = user();

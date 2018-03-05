@@ -5,7 +5,7 @@
             <?= $user['name'] ?>
         </h1>
         <h2 class="subtitle">
-            <a href="mailto:<?= $user['email']; ?>">
+            <a href="mailto:<?= $user['email'] ?>">
                 <?= $user['email'] ?>
             </a> | 
             <?php
@@ -37,12 +37,12 @@
         <article class="card">
             <header class="card-header">
                 <h1 class="card-header-title">
-                    <a href="/posts/<?= $post['id']; ?>">
+                    <a href="/posts/<?= $post['id'] ?>">
                         <?= $post['title'] ?>
                     </a>
                     <span class="by">by</span>
                     <?php $user = get('users', $post['author_id']); ?> <!-- Get the author of the post, will be the user this whole page refers to. -->
-                    <a href="/users/<?= $user['id']; ?>">
+                    <a href="/users/<?= $user['id'] ?>">
                         <?= $user['name'] ?>
                     </a>
                 </h1>

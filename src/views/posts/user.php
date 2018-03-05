@@ -8,12 +8,12 @@
         <article class="card">
             <header class="card-header">
                 <h1 class="card-header-title">
-                    <a href="/posts/<?= $post['id']; ?>">
+                    <a href="/posts/<?= $post['id'] ?>">
                         <?= $post['title'] ?>
                     </a>
                     <span class="by">by</span>
                     <?php $user = get('users', $post['author_id']); ?>
-                    <a href="/users/<?= $user['id']; ?>">
+                    <a href="/users/<?= $user['id'] ?>">
                         <?= $user['name'] ?>
                     </a>
                 </h1>
