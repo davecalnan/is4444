@@ -88,6 +88,29 @@ root
     │       │   single.php - Page showing a single user, the count of their posts and comments, and showing all of their posts.
 ```
 
+### Database Structure
+#### Comments Table
+- id: integer, unsigned, auto-increments. A unique identifier for each comment.
+- post_id: integer, unsigned. The unique id of the post on which the comment is made, matching the post's id in the posts table.
+- user_id: integer, unsigned, nullable. If the commenter was logged in, the unique id of that user, matching the user's id in the users table.
+- name: varchar. The name of the commenter, auto-filled if logged in or provided manually.
+- email: varchar. The email of the commenter, auto-filled if logged in or provided manually.
+- body: text. The body of the comment.
+- created_at: datetime. A timestamp of when the comment was made, set using the MySQL `NOW()` command.
+
+#### Posts Table
+- id: integer, unsigned, auto-increments. A unique identifier for each post.
+- user_id: integer, unsigned. The unique id of the authenticated user who created the post, matching the user's id in the users table.
+- title: varchar. The title of the post provided.
+- body: text. The body of the post provided.
+- created_at: datetime. A timestamp of when the comment was made, set using the MySQL `NOW()` command.
+
+#### Users Table
+- id: integer, unsigned, auto-increments. A unique identifier for each user.
+- name: varchar. The name of the user provided upon signing up.
+- email: varchar. The email of the user provided upon signing up.
+- password: varchar. The password of the user provided upon signing up.
+
 ### How the site works
 For almost all requests, users interact with the [public/index.php](https://github.com/davecalnan/is4444/blob/master/public/index.php) file.
 

@@ -49,3 +49,5 @@ function createComment($post_id, $user_id, $name, $email, $body) {
     }
     return false;
 }
+
+?>

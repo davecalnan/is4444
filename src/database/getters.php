@@ -100,3 +100,5 @@ function getRecentWhere($table, $key, $value, $limit = 1000) {
     }
     return [];
 }
+
+?>

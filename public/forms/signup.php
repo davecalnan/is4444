@@ -15,3 +15,5 @@ if (createUser($name, $email, $password)) { // Function from src/database/setter
     return redirect('/login'); // If login unsuccessful, redirect to login page.
 }
 return redirect('/signup'); // If signup unsuccessful, redirect back.
+
+?>

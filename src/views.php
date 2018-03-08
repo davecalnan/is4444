@@ -20,3 +20,5 @@ function view($name, $data = []) {
 
     echo '404: view not found.'; // If the file is not found, inform the user.
 }
+
+?>

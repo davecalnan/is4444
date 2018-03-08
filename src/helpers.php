@@ -93,3 +93,5 @@ function isActive($linkPath) {
         echo 'is-active';
     }
 }
+
+?>

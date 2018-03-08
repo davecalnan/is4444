@@ -1,7 +1,7 @@
 <main class="main">
     <section class="container section post">
         <?php if (get('posts', $id - 1) || get('posts', $id + 1)) { ?> <!-- If there are posts consecutively before or after this post. -->
-        <nav class=\"links\">
+        <nav class="links">
             <?php
             if (get('posts', $previous = $id - 1)) {
                 echo "<a href=\"/posts/$previous\" class=\"previous\">Previous</a>"; // Link to the previous post.
@@ -38,7 +38,7 @@
             <?php
             if ($comments = getManyWhere('comments', 'post_id', $id)) { // Gets the comments associated with the post or says no comments were found.
                 foreach ($comments as $comment) { // Loops through each comment.
-                    ?>
+            ?>
             <div class="card">
                 <header class="card-header">
                     <h1 class="card-header-title">

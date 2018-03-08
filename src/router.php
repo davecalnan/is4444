@@ -51,3 +51,5 @@ switch ($path) {
         http_response_code(404);
         return view('errors.404');
 }
+
+?>

@@ -12,3 +12,5 @@ $body = htmlspecialchars($_POST['body'], ENT_QUOTES);
 createComment($post_id, $user_id, $name, $email, $body); // This function comes from the src/database/setters.php file.
 
 return redirect("/posts/$post_id"); // Redirect back to the post.
+
+?>

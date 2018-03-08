@@ -13,3 +13,5 @@ if (validateLogin($email, $password)) { // Checks if the provided email and pass
     return redirect('/'); // Redirect to the homepage.
 }
 return redirect('/login'); // Redirect back if unsuccessful.
+
+?>

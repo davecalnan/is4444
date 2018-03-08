@@ -12,3 +12,5 @@ if (createPost($author_id, $title, $body)) { // Function from src/database/sette
 }
 
 return redirect('/posts/create'); // Redirect back if unsuccessful.
+
+?>

@@ -9,3 +9,5 @@ $password = 'is4444';
 $database = 'is4444';
 
 $mysqli = new mysqli($host, $user, $password, $database); // Creates the database connection.
+
+?>
